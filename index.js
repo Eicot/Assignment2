@@ -27,17 +27,17 @@ async function connect() {
 // ROUTES
 async function main() {
     db = await connect();
-    app.get('/listingsAndReviews', async  (req, res) => {
-        let items = await db.collection('listingsAndReviews').find().toArray();
+    app.get('/specification', async  (req, res) => {
+        let items = await db.collection('specification').find().toArray();
         res.json(items)
         
     })
 
-    app.post('/listingsAndReviews', async  (req, res) => {
-        let items = await db.collection('listingsAndReviews').insertOne({
-            brand: req.body.brand,
-            model: req.body.model,
-            year: req.body.year
+    app.post('/specification', async  (req, res) => {
+        let items = await db.collection('specification').insertOne({
+            brand: req.body.Brand,
+            model: req.body.Model,
+            year: req.body.Year
         })
         res.json(items);
         
