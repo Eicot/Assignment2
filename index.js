@@ -35,9 +35,9 @@ async function main() {
 
     app.post('/specification', async  (req, res) => {
         let items = await db.collection('specification').insertOne({
-            brand: req.body.Brand,
-            model: req.body.Model,
-            year: req.body.Year
+            Brand: req.body.Brand,
+            Model: req.body.Model,
+            Year: req.body.Year
         })
         res.json(items);
         
