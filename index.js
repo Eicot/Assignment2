@@ -33,6 +33,14 @@ async function main() {
         
     })
 
+    app.get('/specification/:cycleId', async  (req, res) => {
+        let items = await db.collection('specification').findOne({
+            _id: new ObjectId(req.params.cycleId)
+        });
+        res.json(items);
+        
+    })
+
     app.post('/specification', async  (req, res) => {
         let items = await db.collection('specification').insertOne({
             Brand: req.body.Brand,
