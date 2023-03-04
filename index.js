@@ -37,10 +37,34 @@ async function main() {
         let items = await db.collection('specification').insertOne({
             Brand: req.body.Brand,
             Model: req.body.Model,
-            Year: req.body.Year
+            Year: req.body.Year,
+            Category: req.body.Category,
+            Cooling_system: req.body.Cooling_system,
+            Engine_cylinder: req.body.Engine_stroke,
+            Front_brakes: req.body.Front_brakes,
+            Front_suspension: req.body.Front_suspension,
+            Rear_brakes: req.body.Rear_brakes,
+            Rear_suspension: req.body.Rear_suspension,
+            Gearbox: req.body.Gearbox,
+            Power_hp: req.body.Power_hp,
+            Transmission_type: req.body.Transmission_type
         })
         res.json(items);
         
+    })
+
+    app.patch('/specification/:id', async (req, res) => {
+        let results = await db.collection('specification').updateOne({
+            '_id': new ObjectId(req.params.id),
+        }, {
+            '$set': {
+                'Brand': req.body.Brand,
+                'Model': req.body.Model
+            }
+        })
+        res.json({
+            'status': true
+        })
     })
     
 }
