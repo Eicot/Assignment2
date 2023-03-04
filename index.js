@@ -34,10 +34,10 @@ async function main() {
     })
 
     app.get('/specification/:cycleId', async  (req, res) => {
-        let items = await db.collection('specification').findOne({
+        let c = await db.collection('specification').findOne({
             _id: new ObjectId(req.params.cycleId)
         });
-        res.json(items);
+        res.json(c);
         
     })
 
