@@ -74,6 +74,15 @@ async function main() {
             'status': true
         })
     })
+
+    app.delete('/specification/:id', async (req, res) => {
+        let results = await db.collection('specification').deleteOne({
+            '_id' : new ObjectId(req.params.id)
+        })
+        res.json({
+            'message':'Success'
+        })
+    })
     
 }
 
