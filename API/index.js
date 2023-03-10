@@ -51,7 +51,7 @@ async function main() {
       Bore: req.body.Engine.Bore_mm,
       CoolingSystem: req.body.Engine.CoolingSystem,
       Cylinder: req.body.Engine.Cylinder,
-      Displacement: req.body.Engine.Displacement,
+      Displacement: req.body.Engine.Displacement_ccm,
       Gearbox: req.body.Engine.Gearbox,
       Power: req.body.Engine.Power_hp,
       Stroke: req.body.Engine.Stroke,
@@ -75,37 +75,15 @@ async function main() {
   })
 
   app.patch('/specification/:id', async (req, res) => {
-    let results = await db.collection('specification').updateOne({
+    await db.collection('specification').updateOne({
       '_id': new ObjectId(req.params.id),
     }, {
       '$set': {
-      Brand: req.body.Brand,
-      Model: req.body.Model,
-      Year: req.body.Year,
-      Image: req.body.Image,
-      Description: req.body.Description,
-      Category: req.body.Category,
-      Bore: req.body.Engine.Bore_mm,
-      CoolingSystem: req.body.Engine.CoolingSystem,
-      Cylinder: req.body.Engine.Cylinder,
-      Displacement: req.body.Engine.Displacement,
-      Gearbox: req.body.Engine.Gearbox,
-      Power: req.body.Engine.Power_hp,
-      Stroke: req.body.Engine.Stroke,
-      Torque: req.body.Engine.Torque_Nm,
-      Transmission: req.body.Engine.TransmissionType,
-      Capacity: req.body.Fuel.Capacity_lts,
-      Control: req.body.Fuel.Control,
-      System: req.body.Fuel.System,
-      Weight: req.body.Physical.DryWeight_kg,
-      SeatHeight: req.body.Physical.SeatHeight_mm,
-      Wheelbase: req.body.Physical.Wheelbase_mm,
-      FrontBrakes: req.body.Wheel.FrontBrakes,
-      FrontSuspension: req.body.Wheel.FrontSuspension,
-      FrontTire: req.body.Wheel.FrontTire,
-      RearBrakes: req.body.Wheel.RearBrakes,
-      RearSuspension: req.body.Wheel.RearSuspension,
-      RearTire: req.body.Wheel.RearTire
+        'Brand': req.body.Brand,
+        'Model': req.body.Model,
+        'Year': req.body.Year,
+        'Image': req.body.Image
+
       }
     })
     res.json({
