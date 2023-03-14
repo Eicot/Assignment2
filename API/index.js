@@ -48,6 +48,7 @@ async function main() {
       Image: req.body.Image,
       Description: req.body.Description,
       Category: req.body.Category,
+      ColorOptions: req.body.ColorOptions,
       Engine: {
         Bore_mm: req.body.Bore,
         CoolingSystem: req.body.CoolingSystem,
@@ -57,23 +58,27 @@ async function main() {
         Power_hp: req.body.Power,
         Stroke: req.body.Stroke,
         Torque_Nm: req.body.Torque,
-        TransmissionType: req.body.Transmission,},
+        TransmissionType: req.body.Transmission,
+      },
       Fuel: {
         Capacity_lts: req.body.Capacity,
         Control: req.body.Control,
-        System: req.body.System,},
+        System: req.body.System,
+      },
       Physical: {
         DryWeight_kg: req.body.Weight,
         SeatHeight_mm: req.body.SeatHeight,
-        Wheelbase_mm: req.body.Wheelbase,},
+        Wheelbase_mm: req.body.Wheelbase,
+      },
       Wheel: {
         FrontBrakes: req.body.FrontBrakes,
         FrontSuspension: req.body.FrontSuspension,
         FrontTire: req.body.FrontTire,
         RearBrakes: req.body.RearBrakes,
         RearSuspension: req.body.RearSuspension,
-        RearTire: req.body.RearTire}
-      
+        RearTire: req.body.RearTire
+      }
+
     })
     res.json(items);
 
@@ -90,6 +95,7 @@ async function main() {
         Image: req.body.Image,
         Description: req.body.Description,
         Category: req.body.Category,
+        ColorOptions: req.body.ColorOptions,
         'Engine.Bore_mm': req.body.Bore,
         'Engine.CoolingSystem': req.body.CoolingSystem,
         'Engine.Cylinder': req.body.Cylinder,
