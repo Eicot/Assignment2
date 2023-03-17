@@ -472,6 +472,11 @@ nodemon@^2.0.21:
     touch "^3.1.0"
     undefsafe "^2.0.5"
 
+nodmeon@^0.0.1-security:
+  version "0.0.1-security"
+  resolved "https://registry.npmjs.org/nodmeon/-/nodmeon-0.0.1-security.tgz"
+  integrity sha512-2YsGSYJfdtsSExUGJc4SReBH77CPWMlGokDtWNxmia0PObpMGGjKe/rInMMFuGn2Zs1PKEzKVoIcBUQj+4JFKQ==
+
 nopt@~1.0.10:
   version "1.0.10"
   resolved "https://registry.npmjs.org/nopt/-/nopt-1.0.10.tgz"

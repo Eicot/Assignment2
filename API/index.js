@@ -49,6 +49,7 @@ async function main() {
       Description: req.body.Description,
       Category: req.body.Category,
       ColorOptions: req.body.ColorOptions,
+      Reviews: req.body.Reviews,
       Engine: {
         Bore_mm: req.body.Bore,
         CoolingSystem: req.body.CoolingSystem,
@@ -96,6 +97,7 @@ async function main() {
         Description: req.body.Description,
         Category: req.body.Category,
         ColorOptions: req.body.ColorOptions,
+        Reviews: req.body.Reviews
         'Engine.Bore_mm': req.body.Bore,
         'Engine.CoolingSystem': req.body.CoolingSystem,
         'Engine.Cylinder': req.body.Cylinder,
