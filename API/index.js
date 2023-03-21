@@ -50,8 +50,8 @@ async function main() {
       Category: req.body.Category,
       ColorOptions: req.body.ColorOptions,
       Reviews: req.body.Reviews,
-      Engine: {
-        Bore_mm: req.body.Bore,
+      Engine: { //to create new objects dataset
+        Bore_mm: req.body.Bore, 
         CoolingSystem: req.body.CoolingSystem,
         Cylinder: req.body.Cylinder,
         Displacement_ccm: req.body.Displacement,
@@ -97,8 +97,8 @@ async function main() {
         Description: req.body.Description,
         Category: req.body.Category,
         ColorOptions: req.body.ColorOptions,
-        Reviews: req.body.Reviews
-        'Engine.Bore_mm': req.body.Bore,
+        Reviews: req.body.Reviews,
+        'Engine.Bore_mm': req.body.Bore, //to update object data
         'Engine.CoolingSystem': req.body.CoolingSystem,
         'Engine.Cylinder': req.body.Cylinder,
         'Engine.Displacement_ccm': req.body.Displacement,
@@ -119,6 +119,19 @@ async function main() {
         'Wheel.RearBrakes': req.body.RearBrakes,
         'Wheel.RearSuspension': req.body.RearSuspension,
         'Wheel.RearTire': req.body.RearTire
+      }
+    })
+    res.json({
+      'status': true
+    })
+  })
+
+  app.patch('/specification/:id/Reviews', async (req, res) => {
+    let results = await db.collection('specification').updateOne({
+      '_id': new ObjectId(req.params.id),
+    }, {
+      '$set': {
+        Reviews: req.body.Reviews,
       }
     })
     res.json({
