@@ -13,7 +13,7 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongodb": "^5.1.0",
-    "nodemon": "^2.0.21",
+    "nodemon": "^2.0.22",
     "nodmeon": "^0.0.1-security",
     "yarn": "^1.22.19"
   }
